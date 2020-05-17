@@ -14,7 +14,11 @@ def transform(data, label, is_train):
     data = np.transpose(data, [2, 0, 1])
     data = np.asarray(data, np.float32) / 255.0
     return data, label
+<<<<<<< HEAD
 ds = FileListDataset('/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/amazon_shared_list.txt', '/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/', transform=transform, skip_pred=skip, is_train=True, imsize=256)
+=======
+ds = FileListDataset('/home/liuhong/data/office/amazon_shared_list.txt', '/home/liuhong/data/office/', transform=transform, skip_pred=skip, is_train=True, imsize=256)
+>>>>>>> f2fcd397f9d52a1c67621b96fc23aba4cee219df
 source_train = CustomDataLoader(ds, batch_size=batch_size, num_threads=2)
 
 def transform(data, label, is_train):
@@ -26,8 +30,12 @@ def transform(data, label, is_train):
     data = np.transpose(data, [2, 0, 1])
     data = np.asarray(data, np.float32) / 255.0
     return data, label
+<<<<<<< HEAD
 ds1 = FileListDataset('/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/webcam_list.txt', '/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/', transform=transform, skip_pred=skip, is_train=True, imsize=256)
 
+=======
+ds1 = FileListDataset('/home/liuhong/data/office/webcam_list.txt', '/home/liuhong/data/office/', transform=transform, skip_pred=skip, is_train=True, imsize=256)
+>>>>>>> f2fcd397f9d52a1c67621b96fc23aba4cee219df
 target_train = CustomDataLoader(ds1, batch_size=batch_size, num_threads=2)
 
 def transform(data, label, is_train):
@@ -36,7 +44,11 @@ def transform(data, label, is_train):
     data = np.transpose(data, [2, 0, 1])
     data = np.asarray(data, np.float32) / 255.0
     return data, label
+<<<<<<< HEAD
 ds2 = FileListDataset('/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/webcam_list.txt', '/home/mkeramat/Mahsaa/Prjects/STA/domain_adaptation_images/', transform=transform, skip_pred=skip, is_train=False, imsize=256)
+=======
+ds2 = FileListDataset('/home/liuhong/data/office/webcam_list.txt', '/home/liuhong/data/office/', transform=transform, skip_pred=skip, is_train=False, imsize=256)
+>>>>>>> f2fcd397f9d52a1c67621b96fc23aba4cee219df
 target_test = CustomDataLoader(ds2, batch_size=batch_size, num_threads=2)
 
 setGPU('5')

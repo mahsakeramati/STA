@@ -1,5 +1,6 @@
 import os
 import numpy as np
+<<<<<<< HEAD
 import tensorpack.dataflow
 import time
 import random
@@ -7,6 +8,15 @@ import numbers
 #import imageio
 #import skimage
 from scipy.misc import imread, imresize
+=======
+import tensorpack
+import time
+import random
+import numbers
+import imageio
+import skimage
+#from scipy.misc import imread, imresize
+>>>>>>> f2fcd397f9d52a1c67621b96fc23aba4cee219df
 import tensorlayer as tl
 from six.moves import cPickle
 from utilities import *
@@ -92,9 +102,15 @@ class BaseImageDataset(BaseDataset):
         super(BaseImageDataset, self).__init__(is_train, skip_pred, transform, sample_weight=sample_weight)
 
     def _get_one_data(self, data, label):
+<<<<<<< HEAD
         im = imread(data,mode="RGB")
         if self.imsize:
             im = imresize(im,(self.imsize, self.imsize))
+=======
+        im = imageio.imread(data,mode="RGB")
+        if self.imsize:
+            im = skimage.transform.resize(im,(self.imsize, self.imsize))
+>>>>>>> f2fcd397f9d52a1c67621b96fc23aba4cee219df
         return im, label
 
 
